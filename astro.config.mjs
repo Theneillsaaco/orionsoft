@@ -7,6 +7,14 @@ import svelte from '@astrojs/svelte';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://Theneillsaaco.github.io',
+  base: '/orionsoft',
+  
+  server:{
+    host: true,
+    allowedHosts: true
+  },
+
   vite: {
     plugins: [tailwindcss()]
   },
