@@ -1,11 +1,24 @@
 ---
-import Welcome from '../components/Welcome.astro';
+import ContactCTA from '../components/sections/hero/ContactCTA.astro';
+import FeaturedProjects from '../components/sections/hero/FeaturedProjects.astro';
+import Hero from '../components/sections/hero/Hero.astro';
+import Process from '../components/sections/hero/Process.astro';
+import Services from '../components/sections/hero/Services.astro';
+import Stats from '../components/sections/hero/Stats.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 
 ---
 
 <Layout>
-	<Welcome />
+    <Hero />
+    <HeroBackground client:load />
+    
+    <Services />
+    <Stats /> 
+    <AnimatedCounter client:visible />
+    
+    <FeaturedProjects />
+    
+    <Process />
+    <ContactCTA />
 </Layout>

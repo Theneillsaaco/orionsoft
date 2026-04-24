@@ -48,14 +48,10 @@ const {
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 	</head>
-	<body class="min-h-screen bg-white text-gray-900 antialiased">
-		<slot />
+	
+	<body class="min-h-screen antialiased">
+	    <main>
+    		<slot />
+		</main>
 	</body>
 </html>
-
-<style>
-	html,
-	body {
-	    scroll-behavior: smooth;
-	}
-</style>
