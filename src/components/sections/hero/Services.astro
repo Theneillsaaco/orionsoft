@@ -1,0 +1,126 @@
+---
+const services = [
+  {
+    icon: "⬡",
+    title: "Landing Page",
+    description: "Diseño y desarrollo de páginas de aterrizaje optimizadas para convertir visitantes en clientes.",
+    price: 299,
+    features: ["Diseño personalizado", "Responsive Mobile", "SEO básico", "Formulario de contacto", "1 revisión incluida"],
+    popular: false,
+  },
+  {
+    icon: "⬢",
+    title: "Sitio Web Corporativo",
+    description: "Presencia digital completa para tu empresa con múltiples secciones y gestión de contenido.",
+    price: 799,
+    features: ["Hasta 8 páginas", "Panel CMS", "SEO avanzado", "Blog integrado", "Analítica web", "3 revisiones incluidas"],
+    popular: true,
+  },
+  {
+    icon: "◈",
+    title: "Aplicación Web",
+    description: "Desarrollo de aplicaciones web a medida con funcionalidades avanzadas y base de datos.",
+    price: 1999,
+    features: ["Funcionalidad personalizada", "Base de datos", "Autenticación de usuarios", "API REST", "Panel de administración", "Soporte 3 meses"],
+    popular: false,
+  },
+];
+
+const addons = [
+  { name: "Mantenimiento mensual", price: 49 },
+  { name: "Hosting + dominio (anual)", price: 89 },
+  { name: "Optimización SEO", price: 149 },
+  { name: "Integración e-commerce", price: 399 },
+];
+---
+
+<section id="services" class="py-24 bg-gray-50">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <!-- Header -->
+    <div class="text-center mb-14">
+      <span class="inline-block text-xs font-semibold tracking-widest uppercase text-emerald-700 bg-emerald-100 border border-emerald-200 px-4 py-1.5 rounded-full mb-4">
+        Servicios
+      </span>
+      <h2 class="text-4xl font-bold text-gray-900 tracking-tight mb-3">
+        Lo que construimos para ti
+      </h2>
+      <p class="text-gray-500 text-lg max-w-lg mx-auto leading-relaxed">
+        Soluciones digitales diseñadas para impulsar tu negocio. Sin costos ocultos, sin sorpresas.
+      </p>
+    </div>
+
+    <!-- Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+      {services.map((service) => (
+        <article class={`relative bg-white rounded-2xl p-8 flex flex-col gap-5 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg ${service.popular ? "border-2 border-emerald-500" : "border border-gray-200"}`}>
+
+          {service.popular && (
+            <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-emerald-500 text-white text-xs font-bold tracking-widest uppercase px-4 py-1 rounded-full whitespace-nowrap">
+              Más popular
+            </span>
+          )}
+
+          <!-- Top -->
+          <div class="flex flex-col gap-2">
+            <span class="text-2xl text-emerald-500">{service.icon}</span>
+            <h3 class="text-xl font-bold text-gray-900">{service.title}</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">{service.description}</p>
+          </div>
+
+          <!-- Price -->
+          <div class="flex items-baseline gap-1 py-4 border-t border-b border-gray-100">
+            <span class="text-sm text-gray-400">desde</span>
+            <span class="text-4xl font-extrabold text-gray-900 tracking-tight">${service.price}</span>
+            <span class="text-sm text-gray-400 font-medium">USD</span>
+          </div>
+
+          <!-- Features -->
+          <ul class="flex flex-col gap-2.5 flex-1">
+            {service.features.map((feat) => (
+              <li class="flex items-center gap-2.5 text-sm text-gray-600">
+                <span class="w-4 h-4 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0">
+                  <svg class="w-2.5 h-2.5 text-emerald-600" viewBox="0 0 10 10" fill="none">
+                    <path d="M2 5.5L4 7.5L8 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                {feat}
+              </li>
+            ))}
+          </ul>
+
+          <!-- CTA -->
+          <a
+            href="#contact"
+            class={`block text-center py-3 rounded-xl text-sm font-semibold transition-colors duration-200 ${service.popular ? "bg-emerald-500 text-white hover:bg-emerald-600" : "border-2 border-emerald-200 text-emerald-600 hover:bg-emerald-50"}`}
+          >
+            Solicitar proyecto
+          </a>
+
+        </article>
+      ))}
+    </div>
+
+    <!-- Add-ons -->
+    <div class="mt-14 bg-white border border-gray-200 rounded-2xl p-8">
+      <h3 class="text-base font-bold text-gray-900 mb-5">Servicios adicionales</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+        {addons.map((addon) => (
+          <div class="flex justify-between items-center bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 gap-2">
+            <span class="text-sm text-gray-600">{addon.name}</span>
+            <span class="text-sm font-bold text-emerald-600 whitespace-nowrap">
+              +${addon.price} <span class="text-xs font-normal text-gray-400">USD</span>
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Disclaimer -->
+    <p class="mt-6 text-center text-xs text-gray-400">
+      * Los precios son referenciales. Cada proyecto es evaluado individualmente.{" "}
+      <a href="#contact" class="text-emerald-600 underline">Contáctanos</a> para un presupuesto exacto.
+    </p>
+
+  </div>
+</section>
