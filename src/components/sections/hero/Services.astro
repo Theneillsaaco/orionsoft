@@ -1,30 +1,57 @@
 ---
 const services = [
   {
-    icon: `<path d="M3 12l2-2m0 0l7-7 7 7..." />`,
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" />`,
     title: 'Desarrollo Web',
-    desc: 'Sitios y plataformas modernas y escalables.',
+    desc: 'Sitios y plataformas modernas, rápidas y escalables.',
     price: 299,
     tags: ['Next.js', 'Astro', 'Laravel'],
     features: ['Responsive', 'SEO básico', 'Alta performance'],
     popular: false,
   },
   {
-    icon: `<rect x="5" y="2" width="14" height="20" rx="2" />`,
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 8.25h3" />`,
     title: 'Apps Móviles',
-    desc: 'Apps fluidas para iOS y Android.',
+    desc: 'Apps fluidas y nativas para iOS y Android.',
     price: 799,
-    tags: ['Flutter', 'Swift'],
+    tags: ['Flutter', 'Swift', 'Kotlin'],
     features: ['Cross-platform', 'UI moderna', 'Optimización'],
     popular: true,
   },
   {
-    icon: `<path d="M7 21a4 4 0 01-4-4..." />`,
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42" />`,
     title: 'UI/UX Design',
-    desc: 'Diseño centrado en experiencia real.',
+    desc: 'Diseño centrado en la experiencia real del usuario.',
     price: 199,
-    tags: ['Figma', 'MD3'],
-    features: ['Design System', 'Prototipos', 'UX research'],
+    tags: ['Figma', 'MD3', 'Prototipos'],
+    features: ['Design System', 'Prototipos interactivos', 'UX research'],
+    popular: false,
+  },
+  {
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M13.5 16.875h3.375m0 0h3.375m-3.375 0V13.5m0 3.375v3.375M6 10.5h2.25a2.25 2.25 0 002.25-2.25V6a2.25 2.25 0 00-2.25-2.25H6A2.25 2.25 0 003.75 6v2.25A2.25 2.25 0 006 10.5zm0 9.75h2.25A2.25 2.25 0 0010.5 18v-2.25a2.25 2.25 0 00-2.25-2.25H6a2.25 2.25 0 00-2.25 2.25V18A2.25 2.25 0 006 20.25zm9.75-9.75H18a2.25 2.25 0 002.25-2.25V6A2.25 2.25 0 0018 3.75h-2.25A2.25 2.25 0 0013.5 6v2.25a2.25 2.25 0 002.25 2.25z" />`,
+    title: 'Automatización',
+    desc: 'Flujos automáticos para que tu negocio trabaje solo.',
+    price: 399,
+    tags: ['n8n', 'Zapier', 'APIs'],
+    features: ['Integraciones', 'Webhooks', 'Reportes automáticos'],
+    popular: false,
+  },
+  {
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.848 5.25 5.25 0 00-10.233 2.33A4.502 4.502 0 002.25 15z" />`,
+    title: 'Cloud & DevOps',
+    desc: 'Infraestructura lista para escalar sin caídas.',
+    price: 499,
+    tags: ['AWS', 'Docker', 'CI/CD'],
+    features: ['Deploy automático', 'Monitoreo', 'Backups'],
+    popular: false,
+  },
+  {
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21a48.309 48.309 0 01-8.135-.687c-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" />`,
+    title: 'IA & Chatbots',
+    desc: 'Agentes inteligentes integrados a tu producto.',
+    price: 649,
+    tags: ['OpenAI', 'LangChain', 'RAG'],
+    features: ['Chat personalizado', 'Entrenamiento', 'API propia'],
     popular: false,
   },
 ];
@@ -34,97 +61,89 @@ const services = [
   <div class="max-w-6xl mx-auto">
 
     <!-- Header -->
-    <div class="max-w-xl mb-16">
-      <span class="label-small text-[var(--color-md-on-surface-muted)]">
-        Lo que hacemos
-      </span>
+    <div class="max-w-xl mb-16 flex items-start gap-5">
 
-      <h2 class="headline-large mt-2 text-[var(--color-md-primary)]">
-        Servicios
-      </h2>
+      <!-- Logo / Sticker -->
+      <div class="flex-shrink-0 w-14 h-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mt-1">
+        <svg class="w-7 h-7 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+        </svg>
+      </div>
 
-      <p class="body-large mt-2">
-        Cubrimos todo el ciclo de vida de tu producto digital.
-      </p>
+      <div>
+        <span class="text-xs font-semibold tracking-widest uppercase text-[var(--color-md-on-surface-muted)]">
+          Lo que hacemos
+        </span>
+        <h2 class="text-4xl font-bold mt-1 text-[var(--color-md-primary)] tracking-tight">
+          Servicios
+        </h2>
+        <p class="mt-2 text-[var(--color-md-on-surface-muted)] leading-relaxed">
+          Cubrimos todo el ciclo de vida de tu producto digital.
+        </p>
+      </div>
+
     </div>
 
-    <div class="grid md:grid-cols-2 gap-[1px] border border-[var(--color-md-outline-variant)] rounded-2xl overflow-hidden bg-[var(--color-md-outline-variant)]">
+    <!-- Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-[1px] border border-[var(--color-md-outline-variant)] rounded-2xl overflow-hidden bg-[var(--color-md-outline-variant)]">
 
       {services.map((s) => (
-        <div class="relative p-10 bg-[var(--color-md-surface)]
-                    flex flex-col gap-5
-                    hover:bg-[var(--color-md-surface-variant)]
-                    transition">
+        <div class="relative p-8 bg-[var(--color-md-surface)] flex flex-col gap-4 hover:bg-[var(--color-md-surface-variant)] transition-colors duration-200">
 
           {s.popular && (
-            <span class="absolute top-4 right-4 text-xs px-3 py-1 rounded-full
-                         bg-[var(--color-md-primary)]
-                         text-[var(--color-md-on-primary)]">
+            <span class="absolute top-4 right-4 text-xs px-3 py-1 rounded-full bg-emerald-500 text-white font-semibold">
               Popular
             </span>
           )}
 
           <!-- Icon -->
-          <div class="w-11 h-11 flex items-center justify-center rounded-lg
-                      border border-[var(--color-md-outline-variant)]
-                      bg-[var(--color-md-surface-variant)]
-                      text-[var(--color-md-on-surface-muted)]">
-
-            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none">
+          <div class="w-11 h-11 flex items-center justify-center rounded-xl border border-[var(--color-md-outline-variant)] bg-[var(--color-md-surface-variant)] text-emerald-400">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
               <Fragment set:html={s.icon} />
             </svg>
           </div>
 
-          <!-- Title -->
-          <h3 class="text-xl font-semibold text-[var(--color-md-primary)]">
-            {s.title}
-          </h3>
-
-          <p class="text-sm text-[var(--color-md-on-surface-muted)] leading-relaxed">
-            {s.desc}
-          </p>
+          <!-- Title + desc -->
+          <div>
+            <h3 class="text-lg font-semibold text-[var(--color-md-primary)]">
+              {s.title}
+            </h3>
+            <p class="text-sm text-[var(--color-md-on-surface-muted)] leading-relaxed mt-1">
+              {s.desc}
+            </p>
+          </div>
 
           <!-- Price -->
-          <div class="flex items-baseline gap-2 pt-2">
-            <span class="text-xs text-[var(--color-md-on-surface-muted)]">
-              desde
-            </span>
-            <span class="text-3xl font-bold text-[var(--color-md-primary)]">
-              ${s.price}
-            </span>
+          <div class="flex items-baseline gap-1.5 pt-1">
+            <span class="text-xs text-[var(--color-md-on-surface-muted)]">desde</span>
+            <span class="text-3xl font-extrabold text-[var(--color-md-primary)] tracking-tight">${s.price}</span>
+            <span class="text-xs text-[var(--color-md-on-surface-muted)]">USD</span>
           </div>
 
           <!-- Features -->
-          <ul class="flex flex-col gap-2 mt-2">
+          <ul class="flex flex-col gap-1.5">
             {s.features.map(f => (
               <li class="text-sm flex items-center gap-2 text-[var(--color-md-on-surface-muted)]">
-                <span class="w-1.5 h-1.5 rounded-full bg-[var(--color-md-primary)]"></span>
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 flex-shrink-0"></span>
                 {f}
               </li>
             ))}
           </ul>
 
           <!-- Tags -->
-          <div class="flex flex-wrap gap-2 pt-3">
+          <div class="flex flex-wrap gap-2 pt-1">
             {s.tags.map(tag => (
-              <span class="text-xs px-3 py-1 rounded-full
-                           border border-[var(--color-md-outline-variant)]
-                           bg-[var(--color-md-surface-container)]
-                           text-[var(--color-md-on-surface-muted)]">
+              <span class="text-xs px-2.5 py-1 rounded-full border border-[var(--color-md-outline-variant)] bg-[var(--color-md-surface-container)] text-[var(--color-md-on-surface-muted)]">
                 {tag}
               </span>
             ))}
           </div>
 
           <!-- CTA -->
-          <a href="#contact"
-             class="mt-4 inline-flex justify-center items-center
-                    px-5 py-2.5 rounded-full text-sm font-medium
-                    border border-[var(--color-md-outline)]
-                    text-[var(--color-md-primary)]
-                    hover:bg-[var(--color-md-surface-variant)]
-                    transition">
-
+          <a
+            href="#contact"
+            class="mt-2 inline-flex justify-center items-center px-5 py-2.5 rounded-full text-sm font-medium border border-[var(--color-md-outline)] text-[var(--color-md-primary)] hover:bg-[var(--color-md-surface-variant)] transition-colors duration-200"
+          >
             Solicitar
           </a>
 
