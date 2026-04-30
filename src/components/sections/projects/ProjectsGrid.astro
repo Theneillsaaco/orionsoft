@@ -1,4 +1,78 @@
 ---
 import MagneticCard from '../../../svelte/MagneticCard.svelte'
-const { projects } = Astro.props
+import type { CollectionEntry } from 'astro:content'
+
+type Project = CollectionEntry<'projects'>
+
+const { projects } = Astro.props as { projects: Project[] }
 ---
+<section class="px-6 py-12">
+  <div class="max-w-6xl mx-auto">
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+      {projects.map((p) => (
+        <MagneticCard client:visible>
+
+          <article
+            class="project-card group bg-md-surface border border-md-outline-variant rounded-xl overflow-hidden transition hover:border-md-outline"
+            data-category={p.data.category}
+          >
+            <a href={`/orionsoft/projects/${p.id}`}>
+
+              <!-- Thumb -->
+              <div class="h-40 bg-md-surface-variant border-b border-md-outline-variant relative">
+                <span class="absolute bottom-3 left-4 text-xs text-md-on-surface-muted">
+                  {p.data.category}
+                </span>
+              </div>
+
+              <!-- Body -->
+              <div class="p-5 flex flex-col gap-2">
+
+                <div class="flex justify-between text-xs text-md-on-surface-muted">
+                  <span>{p.data.category}</span>
+                  <span>{p.data.year}</span>
+                </div>
+
+                <h3 class="text-lg font-semibold text-md-primary group-hover:underline">
+                  {p.data.title}
+                </h3>
+
+                <p class="text-sm text-md-on-surface-muted leading-relaxed">
+                  {p.data.desc}
+                </p>
+
+                <div class="flex flex-wrap gap-1 pt-2">
+                  {p.data.tags.map(tag => (
+                    <span class="text-[11px] px-2 py-1 rounded-full border border-md-outline-poutacticovariant text-md-on-surface-muted"> 
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </a>
+          </article>
+
+        </MagneticCard>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  if (typeof document !== 'undefined') {
+    const cards = document.querySelectorAll<HTMLElement>('.project-card')
+
+    document.addEventListener('filter-change', (e: Event) => {
+      const cat = (e as CustomEvent).detail
+
+      cards.forEach(card => {
+        const match =
+          cat === 'Todos' || card.dataset.category === cat
+
+        card.style.display = match ? '' : 'none'
+      })
+    })
+  }
+</script>
