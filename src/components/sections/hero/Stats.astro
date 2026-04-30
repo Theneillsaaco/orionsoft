@@ -1,0 +1,31 @@
+---
+import AnimatedCounter from "../../../svelte/AnimatedCounter.svelte"
+
+const stats = [
+    { to: 48,  suffix: '+', label: 'Proyectos entregados' },
+    { to: 32,  suffix: '+', label: 'Clientes satisfechos' },
+    { to: 5,   suffix: ' años', label: 'En el mercado' },
+    { to: 100, suffix: '%', label: 'Código propio' },
+]
+---
+
+<section class="px-6 pb-32">
+    <div class="max-w-6xl mx-auto border border-[var(--color-md-outline-variant)] rounded-2xl bg-[var(--color-md-surface)] overflow-hidden">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 bg-[var(--color-md-outline-variant)] gap-[1px]">
+            {stats.map(({ to, suffix, label }) => (
+                <div class="p-10 flex flex-col gap-2 bg-[var(--color-md-suface)] hover:bg-[var(--color-md-surface-variant)] transition">
+                    {/* Number */}
+                    <div class="text-[clamp(2.5rem,4vw,4rem)] font-[var(--font-display)] font-bold tracking-tight text-[var(--color-md-primary)] tabular-nums">
+                        <AnimatedCounter client:visible />
+                    </div>
+
+                    {/* Label */}
+                    <p class="text-sm uppercase tracking-[0.06em] font-medium text-[var(--color-md-on-surface-muted)]">
+                        {label}
+                    </p>
+
+                </div>
+            ))}
+        </div>
+    </div>
+</section>
