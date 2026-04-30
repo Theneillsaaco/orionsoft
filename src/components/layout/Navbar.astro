@@ -35,8 +35,8 @@ const currentPath = Astro.url.pathname
             href={href}
             class={`px-3.5 py-1.5 rounded-full text-sm transition-all duration-200
             ${active
-              ? 'text-[var(--color-md-primary)] bg-[var(--color-md-surface-variant)]'
-              : 'text-[var(--color-md-on-surface-muted)] hover:text-[var(--color-md-primary)] hover:bg-[var(--color-md-surface-variant)]'
+              ? 'text-md-primary bg-md-surface-variant'
+              : 'text-md-on-surface-muted hover:text-md-primary hover:bg-md-surface-variant'
             }`}
             aria-current={active ? 'page' : undefined}
           >
@@ -49,16 +49,16 @@ const currentPath = Astro.url.pathname
     <!-- CTA -->
     <a href="mailto:orionsoft@gmail.com"
        class="hidden md:inline-flex shrink-0 px-5 py-2 text-xs rounded-full
-              border border-[var(--color-md-outline)]
-              text-[var(--color-md-primary)]
-              hover:bg-[var(--color-md-surface-variant)]
+              border border-md-outline
+              text-md-primary
+              hover:bg-md-surface-variant
               transition-all duration-200">
       Hablemos
     </a>
 
     <!-- Mobile toggle -->
     <button id="mobile-toggle"
-            class="md:hidden ml-auto text-[var(--color-md-primary)] p-1">
+            class="md:hidden ml-auto text-md-primary p-1">
       <svg class="w-5 h-5" viewBox="0 0 20 20" fill="none">
         <path d="M3 6h14M3 10h14M3 14h14"
               stroke="currentColor"
@@ -71,8 +71,8 @@ const currentPath = Astro.url.pathname
   <!-- Mobile menu -->
   <div id="mobile-menu"
        class="hidden flex-col gap-1 mt-2 px-5 py-4 rounded-2xl
-              border border-[var(--color-md-outline-variant)]
-              bg-[color-mix(in_srgb,var(--color-md-surface)_95%,transparent)]
+              border border-md-outline-variant
+              bg-md-surface
               backdrop-blur-xl">
 
     {links.map(({ href, label }) => {
@@ -82,8 +82,8 @@ const currentPath = Astro.url.pathname
           href={href}
           class={`px-3.5 py-2 rounded-md text-sm transition
           ${active
-            ? 'text-[var(--color-md-primary)] bg-[var(--color-md-surface-variant)]'
-            : 'text-[var(--color-md-on-surface-muted)] hover:text-[var(--color-md-primary)] hover:bg-[var(--color-md-surface-variant)]'
+            ? 'text-md-primary bg-md-surface-variant'
+            : 'text-md-on-surface-muted hover:text-md-primary hover:bg-md-surface-variant'
           }`}
         >
           {label}
@@ -93,7 +93,7 @@ const currentPath = Astro.url.pathname
 
     <a href="mailto:hola@nulvex.com"
        class="mt-2 inline-flex px-4 py-2 rounded-full text-sm
-              bg-[var(--color-md-primary)] text-[var(--color-md-on-primary)]
+              bg-md-primary text-md-on-primary
               hover:opacity-90 transition">
       Hablemos
     </a>
