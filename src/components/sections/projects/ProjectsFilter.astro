@@ -1,0 +1,38 @@
+---
+const { categories } = Astro.props
+---
+
+<div class="sticky top-18 z-50 px-6 py-3 backdrop-blur bg-md-background/80 border-b border-md-outline-variant">
+    <div class="max-w-6xl mx-auto flex flex-wrap gap-2">
+        {categories.map((cat: string, i: number) => (
+            <button
+                class={`px-4 py-1.5 text-sm rounded-full border transition 
+                ${i === 0 
+                    ? 'bg-md-primary text-md-on-primary border-md-primary' 
+                    : 'text-md-on-surface-muted border-transparent hover:border-md-outline-variant hover:text-md-primary'
+                }`}
+                data-category={cat}
+            >
+                {cat}
+            </button>
+        ))}
+    </div>
+</div>
+<script>
+  const btns = document.querySelectorAll('[data-category]')
+
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const cat = (btn as HTMLElement).dataset.category
+
+      btns.forEach(b => {
+        b.classList.remove('bg-md-primary','text-md-on-primary','border-md-primary')
+        b.classList.add('text-md-on-surface-muted')
+      })
+
+      btn.classList.add('bg-md-primary','text-md-on-primary','border-md-primary')
+
+      document.dispatchEvent(new CustomEvent('filter-change', { detail: cat }))
+    })
+  })
+</script>
