@@ -1,0 +1,72 @@
+---
+const steps = [
+  {
+    num: '01',
+    title: 'Descubrimiento',
+    desc: 'Entendemos tu negocio, usuarios y objetivos. Definimos alcance y prioridades.',
+  },
+  {
+    num: '02',
+    title: 'Diseño & Prototipo',
+    desc: 'Wireframes y prototipos de alta fidelidad. Validamos antes de desarrollar.',
+  },
+  {
+    num: '03',
+    title: 'Desarrollo',
+    desc: 'Iteraciones rápidas, código limpio y feedback constante.',
+  },
+  {
+    num: '04',
+    title: 'Lanzamiento',
+    desc: 'Deploy, pruebas finales y soporte post-lanzamiento.',
+  },
+];
+---
+
+<section class="px-6 pb-32">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16">
+    <!-- Header -->
+    <div class="flex flex-col gap-3 md:sticky md:top-24 h-fit">
+      <span class="label-small text-md-surface-muted">
+        Metodología      
+      </span>
+      <h2 class="headline-large text-md-primary">
+        Como trabajamos
+      </h2>
+
+      <p class="text-md-on-surface-muted max-w-md">
+         Un proceso claro, iterativo y enfocado en resultados reales.
+      </p>
+    </div>
+
+    <!-- Steps -->
+    <div class="flex flex-col">
+      {steps.map((step, i) => (
+        <div class="grid grid-cols-[40px_1fr] gap-6">
+          {/* Left (number + line) */}
+          <div class="flex flex-col items-center">
+            <span class="text-xs font-mono text-md-surface-muted">
+              {step.num}
+            </span>
+
+            {i < steps.length - 1 && (
+              <div class="w-px flex-1 my-2 bg-gradient-to-b from-md-outline-variant to-transparent" />
+            )}
+          </div>
+
+          {/* Content */}
+          <div class="pb-10 group">
+            <h3 class="text-lg font-semibold text-ink-200 group-hover:text-md-primary transition">
+              {step.title}
+            </h3>
+
+            <p class="text-sm leading-relaxed mt-2 text-md-on-surface-muted">
+              {step.desc}
+            </p>
+          </div>
+          
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
