@@ -1,26 +1,37 @@
 ---
 import HeroBackground from "../../../svelte/HeroBackground.svelte";
-
 ---
 
-<section class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-6 pt-[120px] pb-[80px]">
-    <HeroBackground client:load />
+<section class="relative min-h-auto flex items-center justify-center overflow-hidden px-6 pt-[120px] pb-[80px]">
 
-    <div class="ani-fade-up flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-[var(--color-md-outline-variant)] bg-[color-mix(in_srgb,var(--color-md-surface-variant)_80%,transparent)] backdorp-blur-md text-[var(--color-md-on-surface-muted)]" style="animation-delay:0ms">
-        <span class="w-1.5 h-1.5 rounded-full bg-[var(--color-ink-300)] animate-pulse" />
-        <span class="text-sm uppercase tracking-[0.06.em] font-medium">
-            Digital Studio
-        </span>
+  <!-- Background -->
+  <HeroBackground client:load />
+
+  <!-- Content -->
+  <div class="relative z-10 max-w-[760px] text-center flex flex-col items-center gap-6">
+
+    <!-- Label -->
+    <div class="ani-fade-up flex items-center gap-2.5 px-4 py-1.5 rounded-full
+                border border-[var(--color-md-outline-variant)]
+                bg-[color-mix(in_srgb,var(--color-md-surface-variant)_80%,transparent)]
+                backdrop-blur-md
+                text-[var(--color-md-on-surface-muted)]">
+
+      <span class="w-1.5 h-1.5 rounded-full bg-[var(--color-ink-300)] animate-pulse"></span>
+
+      <span class="text-sm uppercase tracking-[0.06em] font-medium">
+        Digital Studio
+      </span>
     </div>
 
     <!-- Headline -->
     <h1 class="ani-fade-up font-[var(--font-display)] font-extrabold
                text-[clamp(3.5rem,9vw,7.5rem)]
                leading-[1.0] tracking-[-0.035em]
-               text-[var(--color-md-primary)]"
-        style="animation-delay:120ms">
+               text-[var(--color-md-primary)]">
 
       Creamos lo que<br />
+
       <span class="bg-gradient-to-br from-[var(--color-ink-50)] to-[var(--color-ink-400)]
                    bg-clip-text text-transparent">
         imaginas
@@ -30,29 +41,20 @@ import HeroBackground from "../../../svelte/HeroBackground.svelte";
     <!-- Sub -->
     <p class="ani-fade-up text-[clamp(1rem,2vw,1.2rem)]
               text-[var(--color-md-on-surface-muted)]
-              leading-[1.75] max-w-[540px]"
-       style="animation-delay:240ms">
+              leading-[1.75] max-w-[540px]">
 
-      Apps, plataformas y sitios web que combinan ingeniería sólida con diseño que enamora. Desde la idea hasta el lanzamiento.
+      Apps, plataformas y sitios web que combinan ingeniería sólida con diseño que enamora.
     </p>
 
-    <!-- Actions -->
-    <div class="ani-fade-up flex flex-wrap justify-center items-center gap-3"
-         style="animation-delay:360ms">
+    <!-- Buttons -->
+    <div class="ani-fade-up flex flex-wrap justify-center gap-3">
 
       <a href="/projects"
          class="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium rounded-full
                 bg-[var(--color-md-primary)] text-[var(--color-md-on-primary)]
-                hover:bg-[var(--color-ink-100)] hover:shadow-md transition">
+                hover:bg-[var(--color-ink-100)] transition">
 
         Ver proyectos
-        <svg class="w-4 h-4" viewBox="0 0 16 16" fill="none">
-          <path d="M3 8h10M9 4l4 4-4 4"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"/>
-        </svg>
       </a>
 
       <a href="mailto:hola@nulvex.com"
@@ -64,30 +66,9 @@ import HeroBackground from "../../../svelte/HeroBackground.svelte";
 
         Contáctanos
       </a>
-    </div>
 
-    <!-- Stack -->
-    <div class="ani-fade-up flex flex-wrap justify-center gap-2 pt-2"
-         style="animation-delay:480ms">
-
-      {['React','Next.js','Swift','Flutter','Node','PostgreSQL'].map(t => (
-        <span class="text-xs font-medium tracking-wide px-3 py-1 rounded-full
-                     bg-[var(--color-md-surface-variant)]
-                     border border-[var(--color-md-outline-variant)]
-                     text-[var(--color-md-on-surface-muted)]">
-          {t}
-        </span>
-      ))}
     </div>
 
   </div>
 
-  <!-- Scroll hint -->
-  <div class="ani-fade-in absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center"
-       style="animation-delay:1200ms">
-
-    <div class="w-[1px] h-16 bg-gradient-to-b from-transparent to-[var(--color-ink-500)]
-                animate-[scroll-drop_2s_ease-in-out_infinite]">
-    </div>
-  </div>
 </section>
