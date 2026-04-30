@@ -8,67 +8,49 @@ import HeroBackground from "../../../svelte/HeroBackground.svelte";
   <HeroBackground client:load />
 
   <!-- Content -->
-  <div class="relative z-10 max-w-[760px] text-center flex flex-col items-center gap-6">
+  <div class="relative z-10 max-w-190 text-center flex flex-col items-center gap-6">
 
     <!-- Label -->
     <div class="ani-fade-up flex items-center gap-2.5 px-4 py-1.5 rounded-full
-                border border-[var(--color-md-outline-variant)]
+                border border-md-outline-variant
                 bg-[color-mix(in_srgb,var(--color-md-surface-variant)_80%,transparent)]
                 backdrop-blur-md
-                text-[var(--color-md-on-surface-muted)]">
+                text-md-on-surface-muted">
 
-      <span class="w-1.5 h-1.5 rounded-full bg-[var(--color-ink-300)] animate-pulse"></span>
+      <span class="w-1.5 h-1.5 rounded-full bg-ink-300 animate-pulse"></span>
 
       <span class="text-sm uppercase tracking-[0.06em] font-medium">
-        Digital Studio
+          OrionSoft
       </span>
     </div>
 
     <!-- Headline -->
-    <h1 class="ani-fade-up font-[var(--font-display)] font-extrabold
-               text-[clamp(3.5rem,9vw,7.5rem)]
-               leading-[1.0] tracking-[-0.035em]
-               text-[var(--color-md-primary)]">
+    <h1 class="ani-fade-up font-[var(--font-display)] font-extrabold text-[clamp(3.5rem,9vw,7.5rem)] leading-none tracking-[-0.035em] text-md-primary">
+      Creamos lo que <br />
 
-      Creamos lo que<br />
-
-      <span class="bg-gradient-to-br from-[var(--color-ink-50)] to-[var(--color-ink-400)]
-                   bg-clip-text text-transparent">
+      <span class="bg-linear-to-br from-ink-50 to-ink-400 bg-clip-text text-transparent">
         imaginas
       </span>
     </h1>
 
     <!-- Sub -->
-    <p class="ani-fade-up text-[clamp(1rem,2vw,1.2rem)]
-              text-[var(--color-md-on-surface-muted)]
-              leading-[1.75] max-w-[540px]">
-
+    <p class="ani-fade-up text-[clamp(1rem,2vw,1.2rem)] text-md-on-surface-muted leading-[1.75] max-w-135">
       Apps, plataformas y sitios web que combinan ingeniería sólida con diseño que enamora.
     </p>
 
     <!-- Buttons -->
     <div class="ani-fade-up flex flex-wrap justify-center gap-3">
 
-      <a href="/projects"
-         class="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium rounded-full
-                bg-[var(--color-md-primary)] text-[var(--color-md-on-primary)]
-                hover:bg-[var(--color-ink-100)] transition">
+      <a href="/orionsoft/projects"
+         class="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium rounded-full bg-md-primary text-md-on-primary hover:bg-ink-100 transition">
 
         Ver proyectos
       </a>
 
-      <a href="mailto:hola@nulvex.com"
-         class="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium rounded-full
-                border border-[var(--color-md-outline)]
-                text-[var(--color-md-primary)]
-                hover:bg-[var(--color-md-surface-variant)]
-                transition">
-
+      <a href="mailto:orionsoft@gmail.com"
+         class="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium rounded-full border border-md-outline text-md-primary hover:bg-md-surface-variant transition">
         Contáctanos
       </a>
-
     </div>
-
   </div>
-
 </section>
