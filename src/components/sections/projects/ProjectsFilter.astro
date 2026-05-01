@@ -2,7 +2,7 @@
 const { categories } = Astro.props
 ---
 
-<div class="sticky top-18 z-50 px-6 py-3 backdrop-blur bg-md-background/80 border-b border-md-outline-variant">
+<div class=" rounded-3xl sticky top-18 z-50 px-6 py-3 backdrop-blur bg-md-background/80 border-b border-md-outline-variant">
     <div class="max-w-6xl mx-auto flex flex-wrap gap-2">
         {categories.map((cat: string, i: number) => (
             <button
