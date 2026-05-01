@@ -1,10 +1,16 @@
-<section class="relative flex items-end px-6 py-20">
-    <div class="max-w-6xl mx-auto w-full flex flex-col gap=4">
+---
+import ParticleGrid from "../../../svelte/ParticleGrid.svelte";
+---
+
+<section class="relative overflow-hidden items-end px-6 py-20 pb-20">
+    <ParticleGrid client:load />
+
+    <div class="relative z-10 max-w-6xl mx-auto">
         <span class="label-small text-md-on-surface-muted">
             Portafolio
         </span>
 
-        <h1 class="text-5xl font-bold text-md-primary leading-tight">
+        <h1 class="text-4xl md:text-6xl font-bold text-md-primary leading-tight">
             Nuestros proyectos 
         </h1>
 
