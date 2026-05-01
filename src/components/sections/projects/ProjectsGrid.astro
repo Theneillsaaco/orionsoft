@@ -21,10 +21,22 @@ const { projects = [] } = Astro.props as { projects?: Project[] }
             <a href={`/orionsoft/projects/${p.id}`}>
 
               <!-- Thumb -->
-              <div class="h-40 bg-md-surface-variant border-b border-md-outline-variant relative">
+              <div class="h-40 bg-md-surface-variant border-b border-md-outline-variant relative overflow-hidden">
+                {/* Grid pattern */}
+                <div 
+                  class="absolute inset-0 opacity-40" 
+                  style="background-image: linear-gradient(var(--color-md-outline-variant) 1px, transparent 1px), linear-gradient(90deg, var(--color-md-outline-variant) 1px, transparent 1px); background-size: 24px 24px;"
+                />
+
+                {/* Category */}
                 <span class="absolute bottom-3 left-4 text-xs text-md-on-surface-muted">
                   {p.data.category}
                 </span>
+
+                {/* Fake logo / initials */}
+                <div class="absolute inset-0 flex items-center justify-center text-2xl font-semibold text-md-on-surface-muted">
+                  {p.data.title.slice(0, 2)}
+                </div>
               </div>
 
               <!-- Body -->
