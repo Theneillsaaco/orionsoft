@@ -13,6 +13,7 @@ const projects = defineCollection({
         desc: z.string(),
         year: z.string(),
         tags: z.array(z.string()),
+        cover: z.string().optional(),
     }),
 })
 

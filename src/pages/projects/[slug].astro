@@ -1,0 +1,70 @@
+---
+import { getCollection, render } from 'astro:content'
+import Layout from '../../layouts/Layout.astro'
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects')
+
+  return projects.map((p) => ({
+    params: { slug: p.id },
+    props: { project: p },
+  }))
+}
+
+const { project } = Astro.props
+
+const { Content } = await render(project)
+---
+
+<Layout>
+    <!-- Hero -->
+    <section class="px-6 py-20">
+        <div class="max-w-4xl mx-auto">
+
+        <span class="text-sm text-md-on-surface-muted">
+            {project.data.category} • {project.data.year}
+        </span>
+
+        <h1 class="text-4xl md:text-6xl font-bold text-md-primary mt-2">
+            {project.data.title}
+        </h1>
+
+        <p class="text-md-on-surface-muted mt-4 max-w-xl">
+            {project.data.desc}
+        </p>
+
+        <!-- Tags -->
+        <div class="flex flex-wrap gap-2 mt-6">
+            {project.data.tags.map((tag: string) => (
+            <span class="text-xs px-3 py-1 rounded-full border border-md-outline-variant text-md-on-surface-muted">
+                {tag}
+            </span>
+            ))}
+        </div>
+
+        </div>
+    </section>
+
+    <!-- COVER -->
+    {project.data.cover && (
+        <section class="px-6 pb-16">
+        <div class="max-w-5xl mx-auto">
+            <img 
+            src={project.data.cover}
+            alt={project.data.title}
+            class="w-full rounded-2xl border border-md-outline-variant"
+            />
+        </div>
+        </section>
+    )}
+
+    <!-- CONTENT -->
+    <section class="px-6 pb-32">
+        <div class="max-w-3xl mx-auto text-md-on-surface-muted leading-relaxed [&_h2]:text-md-primary [&_h2]:mt-10 [&_h3]:text-md-primary [&_p]:mt-4 [&_ul]:mt-4 [&_li]:ml-4">
+
+        <Content />
+
+        </div>
+    </section>
+
+</Layout>
