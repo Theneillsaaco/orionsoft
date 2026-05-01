@@ -64,20 +64,20 @@ const services = [
     <div class="max-w-xl mb-16 flex items-start gap-5">
 
       <!-- Logo / Sticker -->
-      <div class="flex-shrink-0 w-14 h-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mt-1">
-        <svg class="w-7 h-7 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <div class="shrink-0 w-14 h-14 rounded-2xl bg-md-primary/10 border border-md-primary/20 flex items-center justify-center mt-1">
+        <svg class="w-7 h-7 text-md-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
           <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
         </svg>
       </div>
 
       <div>
-        <span class="text-xs font-semibold tracking-widest uppercase text-[var(--color-md-on-surface-muted)]">
+        <span class="text-xs font-semibold tracking-widest uppercase text-md-on-surface-muted">
           Lo que hacemos
         </span>
-        <h2 class="text-4xl font-bold mt-1 text-[var(--color-md-primary)] tracking-tight">
+        <h2 class="text-4xl font-bold mt-1 text-md-primary tracking-tight">
           Servicios
         </h2>
-        <p class="mt-2 text-[var(--color-md-on-surface-muted)] leading-relaxed">
+        <p class="mt-2 text-md-on-surface-muted leading-relaxed">
           Cubrimos todo el ciclo de vida de tu producto digital.
         </p>
       </div>
@@ -85,19 +85,19 @@ const services = [
     </div>
 
     <!-- Grid -->
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-[1px] border border-[var(--color-md-outline-variant)] rounded-2xl overflow-hidden bg-[var(--color-md-outline-variant)]">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-1px border border-md-outline-variant rounded-2xl overflow-hidden bg-md-outline-variant">
 
       {services.map((s) => (
-        <div class="relative p-8 bg-[var(--color-md-surface)] flex flex-col gap-4 hover:bg-[var(--color-md-surface-variant)] transition-colors duration-200">
+        <div class="relative p-8 bg-md-surface flex flex-col gap-4 hover:bg-md-surface-variant transition-colors duration-200">
 
           {s.popular && (
-            <span class="absolute top-4 right-4 text-xs px-3 py-1 rounded-full bg-emerald-500 text-white font-semibold">
+            <span class="absolute top-4 right-4 text-xs px-3 py-1 rounded-full bg-md-primary text-md-on-primary font-semibold">
               Popular
             </span>
           )}
 
           <!-- Icon -->
-          <div class="w-11 h-11 flex items-center justify-center rounded-xl border border-[var(--color-md-outline-variant)] bg-[var(--color-md-surface-variant)] text-emerald-400">
+          <div class="w-11 h-11 flex items-center justify-center rounded-xl border border-md-outline-variant bg-md-surface-variant text-md-primary">
             <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
               <Fragment set:html={s.icon} />
             </svg>
@@ -105,26 +105,26 @@ const services = [
 
           <!-- Title + desc -->
           <div>
-            <h3 class="text-lg font-semibold text-[var(--color-md-primary)]">
+            <h3 class="text-lg font-semibold text-md-primary">
               {s.title}
             </h3>
-            <p class="text-sm text-[var(--color-md-on-surface-muted)] leading-relaxed mt-1">
+            <p class="text-sm text-md-on-surface-muted leading-relaxed mt-1">
               {s.desc}
             </p>
           </div>
 
           <!-- Price -->
           <div class="flex items-baseline gap-1.5 pt-1">
-            <span class="text-xs text-[var(--color-md-on-surface-muted)]">desde</span>
-            <span class="text-3xl font-extrabold text-[var(--color-md-primary)] tracking-tight">${s.price}</span>
-            <span class="text-xs text-[var(--color-md-on-surface-muted)]">USD</span>
+            <span class="text-xs text-md-on-surface-muted">desde</span>
+            <span class="text-3xl font-extrabold text-md-primary tracking-tight">${s.price}</span>
+            <span class="text-xs text-md-on-surface-muted">USD</span>
           </div>
 
           <!-- Features -->
           <ul class="flex flex-col gap-1.5">
             {s.features.map(f => (
-              <li class="text-sm flex items-center gap-2 text-[var(--color-md-on-surface-muted)]">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 flex-shrink-0"></span>
+              <li class="text-sm flex items-center gap-2 text-md-on-surface-muted">
+                <span class="w-1.5 h-1.5 rounded-full bg-md-primary shrink-0"></span>
                 {f}
               </li>
             ))}
@@ -133,7 +133,7 @@ const services = [
           <!-- Tags -->
           <div class="flex flex-wrap gap-2 pt-1">
             {s.tags.map(tag => (
-              <span class="text-xs px-2.5 py-1 rounded-full border border-[var(--color-md-outline-variant)] bg-[var(--color-md-surface-container)] text-[var(--color-md-on-surface-muted)]">
+              <span class="text-xs px-2.5 py-1 rounded-full border border-md-outline-variant bg-md-surface-container text-md-on-surface-muted">
                 {tag}
               </span>
             ))}
@@ -142,7 +142,7 @@ const services = [
           <!-- CTA -->
           <a
             href="#contact"
-            class="mt-2 inline-flex justify-center items-center px-5 py-2.5 rounded-full text-sm font-medium border border-[var(--color-md-outline)] text-[var(--color-md-primary)] hover:bg-[var(--color-md-surface-variant)] transition-colors duration-200"
+            class="mt-2 inline-flex justify-center items-center px-5 py-2.5 rounded-full text-sm font-medium border border-md-outline-variant text-md-primary hover:bg-md-surface-variant transition-colors duration-200"
           >
             Solicitar
           </a>
