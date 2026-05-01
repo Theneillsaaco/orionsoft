@@ -34,7 +34,7 @@ const { projects = [] } = Astro.props as { projects?: Project[] }
                 </span>
 
                 {/* Fake logo / initials */}
-                <div class="absolute inset-0 flex items-center justify-center text-2xl font-semibold text-md-on-surface-muted">
+                <div class="absolute inset-0 flex items-center justify-center text-2xl font-semibold text-md-on-surface-muted group-hover:scale-105 transition">
                   {p.data.title.slice(0, 2)}
                 </div>
               </div>
