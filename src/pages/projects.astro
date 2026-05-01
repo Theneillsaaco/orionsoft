@@ -14,6 +14,6 @@ const categories = ['Todos', ...new Set(projects.map(p => p.data.category))]
 
     <Hero />
     <ProjectsFilter categories={categories} />
-    <ProjectsGrid />
+    <ProjectsGrid projects={projects} />
 
 </Layout>    
