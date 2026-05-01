@@ -1,6 +1,6 @@
 ---
 title: "Creative Studio Website"
-category: "Sitio corporativo"
+category: "Desarrollo Web"
 desc: "Sitio web moderno para estudio creativo con animaciones y CMS."
 year: "2023"
 tags: ["Astro", "Svelte", "Sanity"]

@@ -3,41 +3,46 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="404 - Página no encontrada">
-  <main class="min-h-screen bg-gray-950 flex items-center justify-center px-6">
-    <div class="text-center max-w-lg mx-auto">
+  <section class="relative min-h-svh flex items-center justify-center px-6 text-center overflow-hidden">
+    <!-- Background glow -->
+    <div class="absolute w-150 h-75 bg-[radial-gradient(circle,rgba(99,102,241,0.18),transparent_70%)] blur-3xl top-1/4 left-1/2 -translate-x-1/2" />
 
-      <!-- Número 404 -->
-      <p class="text-[10rem] font-black text-gray-900 leading-none select-none tracking-tighter">
+    <!-- Floting noise / depth -->
+    <div class="absolute inset-0 opacity-5 bg-[radial-gradient(circle,#fff_1px,transparent_1px)] bg-size-[20px_20px]" />
+
+    <!-- Content -->
+    <div class="relative z-10 flex flex-col items-center gap-5 max-w-md">
+      <!-- 404 -->
+      <h1 class="text-[clamp(6rem,12vw,10rem)] font-black tracking-tighter text-md-outline select-none leading-none">
         404
-      </p>
-
-      <!-- Línea decorativa -->
-      <div class="w-12 h-0.5 bg-emerald-500 mx-auto -mt-4 mb-8"></div>
-
-      <!-- Texto -->
-      <h1 class="text-2xl font-bold text-white mb-3 tracking-tight">
-        Página no encontrada
       </h1>
-      <p class="text-gray-400 leading-relaxed mb-10">
-        La página que buscas no existe o fue movida. Vuelve al inicio y sigue explorando.
+
+      <!-- Title -->
+        <h2 class="text-2xl md:text-3xl font-bold text-md-primary">
+        Página no encontrada
+      </h2>
+
+      <!-- Description -->
+      <p class="text-md-on-surface-muted text-sm md:text-base leading-relaxed">
+        Esta ruta no existe o fue movida a otro lugar.
       </p>
 
-      <!-- Botones -->
-      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+      <!-- Buttons -->
+      <div class="flex flex-col sm:flex-row gap-3 mt-4">
         <a
           href="/orionsoft"
-          class="px-6 py-3 bg-emerald-500 text-white text-sm font-semibold rounded-xl hover:bg-emerald-400 transition-colors duration-200"
+          class="px-6 py-3 rounded-full text-sm font-medium bg-md-primary text-md-on-primary hover:scale-103 transition-all duration-200"
         >
           Volver al inicio
         </a>
+
         <a
-          href="#contact"
-          class="px-6 py-3 bg-transparent border-2 border-gray-700 text-gray-300 text-sm font-semibold rounded-xl hover:border-emerald-800 hover:text-emerald-400 transition-colors duration-200"
+          href="/orionsoft#contact"
+          class="px-6 py-3 rounded-full text-sm font-medium border border-md-outline transition"
         >
-          Contáctanos
+          Contacto
         </a>
       </div>
-
     </div>
-  </main>
+  </section>
 </Layout>
