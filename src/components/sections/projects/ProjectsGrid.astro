@@ -4,7 +4,7 @@ import type { CollectionEntry } from 'astro:content'
 
 type Project = CollectionEntry<'projects'>
 
-const { projects } = Astro.props as { projects: Project[] }
+const { projects = [] } = Astro.props as { projects?: Project[] }
 ---
 <section class="px-6 py-12">
   <div class="max-w-6xl mx-auto">
@@ -45,7 +45,7 @@ const { projects } = Astro.props as { projects: Project[] }
 
                 <div class="flex flex-wrap gap-1 pt-2">
                   {p.data.tags.map(tag => (
-                    <span class="text-[11px] px-2 py-1 rounded-full border border-md-outline-poutacticovariant text-md-on-surface-muted"> 
+                    <span class="text-[11px] px-2 py-1 rounded-full border border-md-outline-variant text-md-on-surface-muted"> 
                       {tag}
                     </span>
                   ))}
