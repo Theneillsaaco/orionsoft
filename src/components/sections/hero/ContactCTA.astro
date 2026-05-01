@@ -1,4 +1,6 @@
 ---
+import ParticleGrid from "../../../svelte/ParticleGrid.svelte";
+
 const contact = {
   email: "orionsoft@gmail.com",
   phone: "+1 (829) 793-1539",
@@ -11,7 +13,7 @@ const contact = {
   ],
 };
 ---
-<section class="px-6 pb-24">
+<section class="px-6 pb-6">
   <div class="max-w-6xl mx-auto">
     <div class="relative overflow-hidden rounded-2xl border border-md-outline-variant bg-md-surface px-8 py-20 text-center">
 
@@ -59,8 +61,10 @@ const contact = {
   </div>
 </section>
 
-<section id="contact" class="px-6">
-  <div class="max-w-6xl mx-auto">
+<section id="contact" class="relative overflow-hidden px-16 pt-16 pb-20">
+  <ParticleGrid client:load />
+  
+  <div class="relative z-10 max-w-6xl mx-auto">
 
     <!-- Header -->
     <div class="text-center mb-16">
