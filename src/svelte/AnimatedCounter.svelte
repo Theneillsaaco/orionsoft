@@ -1,7 +1,7 @@
 <script>
     import { onMount, onDestroy } from "svelte";
 
-    export let to = 27
+    export let to = 100
     export let duration = 1800
     export let suffix = ''
     export let prefix = ''

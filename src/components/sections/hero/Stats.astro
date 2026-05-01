@@ -10,20 +10,24 @@ const stats = [
 ---
 
 <section class="px-6 pb-32">
-    <div class="max-w-6xl mx-auto border border-[var(--color-md-outline-variant)] rounded-2xl bg-[var(--color-md-surface)] overflow-hidden">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 bg-[var(--color-md-outline-variant)] gap-[1px]">
+    <div class="max-w-6xl mx-auto border border-md-outline-variant rounded-2xl bg-md-surface overflow-hidden">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-md-outline-variant">
             {stats.map(({ to, suffix, label }) => (
-                <div class="p-10 flex flex-col gap-2 bg-[var(--color-md-suface)] hover:bg-[var(--color-md-surface-variant)] transition">
+                <div class="p-10 flex flex-col gap-3 bg-md-surface hover:bg-md-surface-variant transition group">
                     {/* Number */}
-                    <div class="text-[clamp(2.5rem,4vw,4rem)] font-[var(--font-display)] font-bold tracking-tight text-[var(--color-md-primary)] tabular-nums">
-                        <AnimatedCounter client:visible />
+                    <div class="text-4xl md:text-5xl font-bold tracking-tight text-md-primary tabular-nums flex items-end gap-1">
+                        <AnimatedCounter client:visible  {to} {suffix} />
+
+                        {/* subtle glow */}
+                        <span class="absolute opacity-0 group-hover:opacity-100 transition text-md-primary blur-md">
+                            {to}
+                        </span>
                     </div>
 
                     {/* Label */}
-                    <p class="text-sm uppercase tracking-[0.06em] font-medium text-[var(--color-md-on-surface-muted)]">
+                    <p class="text-xs uppercase tracking-[0.08em] font-medium text-md-on-surface-muted">
                         {label}
                     </p>
-
                 </div>
             ))}
         </div>
