@@ -16,8 +16,10 @@ const contact = {
     <div class="relative overflow-hidden rounded-2xl border border-md-outline-variant bg-md-surface px-8 py-20 text-center">
 
       <!-- Glow -->
-      <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div class="w-150 h-75 bg-[radial-gradient(circle,rgba(255,255,255,0.05)_0%,transparent_70%)]"></div>
+      <div class="absolute inset-0 pointer-events-none">
+        <div class="obsolute -top-20 left-1/2 -translate-x-1/2 w-150 h-75 bg-[radial-gradient(circle,rgba(99,102,241,0.15)_0%,transparent_70%)] blur-2xl" />
+
+        <div class="absolute bottom-0 left-0 right-0 h-40 bg-linear-to-t from-md-surface to-transparent" />
       </div>
 
       <!-- Content -->
@@ -35,11 +37,11 @@ const contact = {
           Cuéntanos tu idea. Respondemos en menos de 24 horas con una propuesta inicial clara.
         </p>
 
-        <div class="flex flex-wrap justify-center gap-3 mt-2">
+        <div class="flex flex-wrap justify-center gap-3 mt-4">
 
           <a
             href={`mailto:${contact.email}`}
-            class="px-6 py-3 rounded-full text-sm font-medium bg-md-primary text-md-on-primary hover:opacity-90 transition"
+            class="px-6 py-3 rounded-full text-sm font-medium bg-md-primary text-md-on-primary hover:scale-103 hover:shadow-lg transition-all duration-200"
           >
             Enviar mensaje
           </a>
@@ -61,7 +63,7 @@ const contact = {
   <div class="max-w-6xl mx-auto">
 
     <!-- Header -->
-    <div class="text-center mb-14">
+    <div class="text-center mb-16">
       <span class="label-small text-md-on-surface-muted">
         Contacto
       </span>
@@ -81,10 +83,15 @@ const contact = {
       <!-- Email -->
       <a
         href={`mailto:${contact.email}`}
-        class="group bg-md-surface border border-md-outline-variant rounded-xl p-6 flex flex-col gap-3 hover:bg-md-surface-variant transition"
+        class="group relative bg-md-surface border border-md-outline-variant rounded-xl p-6 flex flex-col gap-3 hover:bg-md-surface-variant transition overflow-hidden"
       >
-        <span class="label-small text-md-on-surface-muted">Email</span>
-        <span class="text-md-primary font-medium group-hover:underline">
+        <div class="obsolute inset-0 opacity-0 group-hover:opacity-100 transition bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.05),transparent_70%)]" />
+      
+        <span class="label-small text-md-on-surface-muted">
+          Email
+        </span>
+
+        <span class="text-md-primary font-medium group-hover:underline relative z-10">
           {contact.email}
         </span>
       </a>
@@ -92,17 +99,25 @@ const contact = {
       <!-- Tel -->
       <a
         href={`tel:${contact.phone}`}
-        class="group bg-md-surface border border-md-outline-variant rounded-xl p-6 flex flex-col gap-3 hover:bg-md-surface-variant transition"
+        class="group relative bg-md-surface border border-md-outline-variant rounded-xl p-6 flex flex-col gap-3 hover:bg-md-surface-variant transition overflow-hidden"
       >
-        <span class="label-small text-md-on-surface-muted">Teléfono</span>
-        <span class="text-md-primary font-medium group-hover:underline">
+        <div class="obsolute inset-0 opacity-0 group-hover:opacity-100 transition bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.05),transparent_70%)]" />
+
+        <span class="label-small text-md-on-surface-muted">
+          Teléfono
+        </span>
+
+        <span class="text-md-primary font-medium group-hover:underline relative z-10">
           {contact.phone}
         </span>
       </a>
 
       <!-- Ubicación -->
       <div class="bg-md-surface border border-md-outline-variant rounded-xl p-6 flex flex-col gap-3">
-        <span class="label-small text-md-on-surface-muted">Ubicación</span>
+        <span class="label-small text-md-on-surface-muted">
+          Ubicación
+        </span>
+
         <span class="text-md-primary font-medium">
           {contact.address}
         </span>
@@ -111,30 +126,34 @@ const contact = {
     </div>
 
     <!-- Socials -->
-    <div class="mt-8 grid sm:grid-cols-2 md:grid-cols-4 gap-3">
+    <div class="mt-10 grid sm:grid-cols-2 md:grid-cols-4 gap-3">
 
       <a href={contact.socials[0].url}
-         class="bg-md-surface border border-md-outline-variant rounded-xl p-4 flex justify-between items-center hover:bg-md-surface-variant transition">
+         class="group bg-md-surface border border-md-outline-variant rounded-xl p-4 flex justify-between items-center hover:bg-md-surface-variant transition"
+      >
         <span class="text-sm text-md-on-surface-muted">Instagram</span>
-        <span class="text-sm text-md-primary">@orionsoft</span>
+        <span class="text-sm text-md-primary group-hover:translate-x-1 transition">@orionsoft</span>
       </a>
 
       <a href={contact.socials[1].url}
-         class="bg-md-surface border border-md-outline-variant rounded-xl p-4 flex justify-between items-center hover:bg-md-surface-variant transition">
+         class="group bg-md-surface border border-md-outline-variant rounded-xl p-4 flex justify-between items-center hover:bg-md-surface-variant transition"
+      >
         <span class="text-sm text-md-on-surface-muted">LinkedIn</span>
-        <span class="text-sm text-md-primary">OrionSoft</span>
+        <span class="text-sm text-md-primary group-hover:translate-x-1 transition">OrionSoft</span>
       </a>
 
       <a href={contact.socials[2].url}
-         class="bg-md-surface border border-md-outline-variant rounded-xl p-4 flex justify-between items-center hover:bg-md-surface-variant transition">
+         class="group bg-md-surface border border-md-outline-variant rounded-xl p-4 flex justify-between items-center hover:bg-md-surface-variant transition"
+      >
         <span class="text-sm text-md-on-surface-muted">GitHub</span>
-        <span class="text-sm text-md-primary">Orionsoft</span>
+        <span class="text-sm text-md-primary group-hover:translate-x-1 transition">Orionsoft</span>
       </a>
 
       <a href={contact.socials[3].url}
-         class="bg-md-surface border border-md-outline-variant rounded-xl p-4 flex justify-between items-center hover:bg-md-surface-variant transition">
+         class="group bg-md-surface border border-md-outline-variant rounded-xl p-4 flex justify-between items-center hover:bg-md-surface-variant transition"
+      >
         <span class="text-sm text-md-on-surface-muted">WhatsApp</span>
-        <span class="text-sm text-md-primary">Escribir</span>
+        <span class="text-sm text-md-primary group-hover:translate-x-1 transition">Escribir</span>
       </a>
     </div>
   </div>
